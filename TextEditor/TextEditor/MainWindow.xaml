@@ -1,0 +1,171 @@
+﻿<Window x:Class="TextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Text Editor" Height="350" Width="700" WindowStartupLocation="CenterScreen">
+  
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+<!--#region Menu Start Here:-->
+        
+        <Menu IsMainMenu="True" Grid.Row="0">
+            
+            <!--#region  File Menu -->
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" x:Name="new_file" Click="new_file_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="File" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Open" x:Name="open_file" Click="open_file_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="OpenInNew" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="_Save" x:Name="save_file" Click="save_file_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ContentSave" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Save As.." x:Name="save_as_file" Click="save_as_file_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ContentSaveAll" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="_Words Count" x:Name="words_Count" Click="words_Count_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Counter" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Exit" x:Name="exitApp" Click="exitApp_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ExitToApp" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <!--#endregion-->
+            
+            <!--#region  Edit Menu -->
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Cut" Command="Cut">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ContentCut" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Copy" Command="Copy">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ContentCopy" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Paste" Command="Paste">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ContentPaste" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="_Select All" Command="SelectAll">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="SelectAll" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="_Undo" Command="Undo">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Undo" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Redo" Command="Redo">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Redo" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <!--#endregion-->
+            
+            <!--#region Format Menu-->
+            <MenuItem Header="_Format">
+                <MenuItem Header="_Font.." x:Name="font_Dialog" Click="font_Dialog_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="FormatFont" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Color" x:Name="color_Dialog" Click="color_Dialog_Click">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="FormatColorText" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <!--#endregion-->
+
+        </Menu>
+        
+        <!--#endregion-->
+        
+<!--#region   Richtext Box Start Here: -->
+
+        <RichTextBox  Grid.Row="1"  x:Name="richTextBox"   VerticalScrollBarVisibility="Auto">
+            
+            <!--#region  Use for not given spacing in Rich_Text_Box-->
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+            <!--#endregion-->
+            
+            <!--#region Right Click Menu-->
+            <RichTextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Copy" Command="Copy">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentCopy" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Cut" Command="Cut">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentCut" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Paste" Command="Paste">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ContentPaste" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Select All" Command="SelectAll">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="SelectAll" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Undo" Command="Undo">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Undo" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Redo" Command="Redo">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Redo" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </RichTextBox.ContextMenu>
+            <!--#endregion-->
+            
+        </RichTextBox>
+<!--#endregion-->
+        
+
+    </Grid>
+    
+</Window>
