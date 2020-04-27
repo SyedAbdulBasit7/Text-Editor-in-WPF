@@ -1,6 +1,6 @@
 <h1> Text-Editor-in-WPF </h1>
 </hr>
-<img src="TextEditor/Snapshot.JPG" alt="Snapshot"/>
+<img src="Snapshot.JPG" alt="Snapshot"/>
 </hr>
 <h2> Dependencies that i used: </h2>
 <ol>
