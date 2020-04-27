@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Text Editor" Height="350" Width="700" WindowStartupLocation="CenterScreen">
+        Title="Text Editor" Height="450" Width="700" WindowStartupLocation="CenterScreen">
   
     <Grid>
         <Grid.RowDefinitions>
@@ -14,8 +14,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 <!--#region Menu Start Here:-->
-        
-        <Menu IsMainMenu="True" Grid.Row="0">
+
+        <Menu IsMainMenu="True" Grid.Row="0" Background="#f2e6ff">
             
             <!--#region  File Menu -->
             <MenuItem Header="_File">
