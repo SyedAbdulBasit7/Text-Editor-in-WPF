@@ -1,6 +1,6 @@
 <h1> Text-Editor-in-WPF </h1>
 </hr>
-<img src="\TextEditor\Snapshot.jpg" alt="Snapshot"/>
+<img src="Snapshot.jpg" alt="Snapshot"/>
 <h2> Dependencies that i used: </h2>
 <ol>
   <li>In your project references mark a checkbox of <q>System.windows.form</q></li>
